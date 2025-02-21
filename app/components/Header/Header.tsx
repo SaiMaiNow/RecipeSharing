@@ -13,9 +13,9 @@ export const Header = () => {
             <h2 className="text-[#1b130d] text-lg font-bold leading-tight tracking-[-0.015em]">Recipe Sharing</h2>
             <div className="flex flex-1 justify-end gap-8">
                 <label className="flex flex-col min-w-40 !h-10 max-w-64">
-                    <div className="flex w-full flex-1 items-stretch rounded-xl h-full">
+                    <button className="flex w-full items-center flex-1 rounded-xl h-full bg-[#ebe2db] hover:bg-[#e7ded6] cursor-pointer" >
                         <div
-                            className="text-[#9a6e4c] flex border-none bg-[#f3ece7] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                            className="text-[#9a6e4c] flex items-center justify-center px-4"
                             data-icon="MagnifyingGlass"
                             data-size="24px"
                             data-weight="regular"
@@ -26,8 +26,8 @@ export const Header = () => {
                                 ></path>
                             </svg>
                         </div>
-                        <input type="text" placeholder="Search" className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1b130d] focus:outline-0 focus:ring-0 border-none bg-[#f3ece7] focus:border-none h-full placeholder:text-[#9a6e4c] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" />
-                    </div>
+                        <span className="text-[#9a6e4c] pr-4">Search . . .</span>
+                    </button>
                 </label>
                 <button
                     className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f3ece7] text-[#1b130d] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"

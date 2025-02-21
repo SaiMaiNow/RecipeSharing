@@ -14,7 +14,7 @@ export default function Page() {
                                 Discover the best recipes from top chefs
                             </h1>
                             <label className="flex flex-col min-w-40 h-14 w-full max-w-[480px] @[480px]:h-16">
-                                <div className="flex w-full flex-1 items-stretch rounded-xl h-full">
+                                <button className="flex w-full flex-1 items-stretch rounded-xl h-full">
                                     <div
                                         className="text-[#9a6e4c] flex border border-[#e7dacf] bg-[#fcfaf8] items-center justify-center pl-[15px] rounded-l-xl border-r-0"
                                         data-icon="MagnifyingGlass"
@@ -37,7 +37,7 @@ export default function Page() {
                                             <span className="truncate">Search</span>
                                         </button>
                                     </div>
-                                </div>
+                                </button>
                             </label>
                         </div>
                     </div>
