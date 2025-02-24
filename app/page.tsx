@@ -14,7 +14,7 @@ export default function Page() {
                                 Discover the best recipes from top chefs
                             </h1>
                             <label className="flex flex-col min-w-40 h-14 w-full max-w-[480px] @[480px]:h-16">
-                                <button className="flex w-full flex-1 items-stretch rounded-xl h-full">
+                                <div className="flex w-full flex-1 items-stretch rounded-xl h-full">
                                     <div
                                         className="text-[#9a6e4c] flex border border-[#e7dacf] bg-[#fcfaf8] items-center justify-center pl-[15px] rounded-l-xl border-r-0"
                                         data-icon="MagnifyingGlass"
@@ -27,17 +27,13 @@ export default function Page() {
                                             ></path>
                                         </svg>
                                     </div>
-                                    <input
-                                        type="text"
-                                        placeholder="Search for recipes"
-                                        className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1b130d] focus:outline-0 focus:ring-0 border border-[#e7dacf] bg-[#fcfaf8] focus:border-[#e7dacf] h-full placeholder:text-[#9a6e4c] px-[15px] rounded-r-none border-r-0 pr-2 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
-                                    />
+                                    <input type="text" placeholder="Search for recipes" className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1b130d] focus:outline-0 focus:ring-0 border border-[#e7dacf] bg-[#fcfaf8] focus:border-[#e7dacf] h-full placeholder:text-[#9a6e4c] px-[15px] rounded-r-none border-r-0 pr-2 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"                                    />
                                     <div className="flex items-center justify-center rounded-r-xl border-l-0 border border-[#e7dacf] bg-[#fcfaf8] pr-[7px]">
                                         <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#ee7f2b] text-[#1b130d] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]" >
                                             <span className="truncate">Search</span>
-                                        </button>
+                                        </button>   
                                     </div>
-                                </button>
+                                </div>
                             </label>
                         </div>
                     </div>
@@ -141,6 +137,6 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

@@ -1,6 +1,37 @@
+"use client"
+
 import React from 'react'
 
 export const Header = () => {
+    const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+
+    React.useEffect(() => {
+        if (isSearchOpen) {
+            document.body.style.overflow = 'hidden';
+
+            const handleEsc = (e: KeyboardEvent) => {
+                if (e.key === 'Escape') {
+                    setIsSearchOpen(false);
+                }
+            }
+
+            const handleClickOutside = (e: MouseEvent) => {
+                if (e.target instanceof HTMLElement && !e.target.closest('.search-container')) {
+                    setIsSearchOpen(false);
+                }
+            }
+
+            window.addEventListener('keydown', handleEsc);
+            window.addEventListener('click', handleClickOutside);
+
+            return () => {
+                document.body.style.overflow = 'unset';
+                window.removeEventListener('keydown', handleEsc);
+                window.removeEventListener('click', handleClickOutside);
+            }
+        }
+
+    }, [isSearchOpen]);
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3ece7] px-10 py-3 bg-white">
             <div className="flex items-center gap-4 text-[#1b130d]">
@@ -13,7 +44,9 @@ export const Header = () => {
             <h2 className="text-[#1b130d] text-lg font-bold leading-tight tracking-[-0.015em]">Recipe Sharing</h2>
             <div className="flex flex-1 justify-end gap-8">
                 <label className="flex flex-col min-w-40 !h-10 max-w-64">
-                    <button className="flex w-full items-center flex-1 rounded-xl h-full bg-[#ebe2db] hover:bg-[#e7ded6] cursor-pointer" >
+                    <button className="flex w-full items-center flex-1 rounded-xl h-full bg-[#ebe2db] hover:bg-[#e7ded6] cursor-pointer"
+                        onClick={() => setIsSearchOpen(!isSearchOpen)}
+                    >
                         <div
                             className="text-[#9a6e4c] flex items-center justify-center px-4"
                             data-icon="MagnifyingGlass"
@@ -28,6 +61,31 @@ export const Header = () => {
                         </div>
                         <span className="text-[#9a6e4c] pr-4">Search . . .</span>
                     </button>
+                    {isSearchOpen && (
+                        <div className="fixed inset-0 bg-black/50 z-50">
+                            <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-full max-w-2xl">
+                                <div className="bg-white rounded-xl shadow-lg p-4">
+                                    <div className="flex items-center gap-3 border-b pb-3">
+                                        <div className="text-gray-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                                            </svg>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            className="w-full bg-transparent outline-none text-lg"
+                                            placeholder="Search for recipes"
+                                            autoFocus
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                className="absolute inset-0"
+                                onClick={() => setIsSearchOpen(false)}
+                            ></div>
+                        </div>
+                    )}
                 </label>
                 <button
                     className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f3ece7] text-[#1b130d] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
