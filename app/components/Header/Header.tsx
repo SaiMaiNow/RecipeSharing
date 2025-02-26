@@ -27,7 +27,7 @@ export const Header = () => {
 
     }, [isSearchOpen]);
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3ece7] px-10 py-3 bg-white">
+        <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-300 px-10 py-3 bg-white">
             <Link href="/" className="flex items-center gap-4 text-[#1b130d]">
                 <div className="size-4">
                     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

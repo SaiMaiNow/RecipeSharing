@@ -1,8 +1,11 @@
 import React from "react";
 
+import { Sidebar } from "./components/Sidebar/Sidebar";
+
 export default function Page() {
     return (
-        <div className="px-40 flex flex-1 justify-center py-5 pt-[70px]">
+        <div className="flex-1 ml-64 px-40 flex justify-center py-5 pt-[70px]">
+            <Sidebar />
             <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
                 <div className="@container">
                     <div className="@[480px]:p-4">

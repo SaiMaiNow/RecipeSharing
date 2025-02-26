@@ -9,4 +9,39 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
+}
+
+.scrollCustom::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    display: none;
+}
+
+.scrollCustom:hover::-webkit-scrollbar {
+    display: block;
+}
+
+.scrollCustom::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 8px;
+    margin: 4px;
+}
+
+.scrollCustom::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
+
+.scrollCustom::-webkit-scrollbar-thumb:hover {
+    background: #9ca0a4;
+}
+
+.scrollCustom {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.scrollCustom:hover {
+    scrollbar-color: #bcc0c4 transparent;
+}
